@@ -19,7 +19,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from first_app import views # first_app이라는 app 폴더에서 views.py라는 파일을 불러온다
+from first_app import views
+from my_app import views as my_views # first_app이라는 app 폴더에서 views.py라는 파일을 불러온다
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,9 @@ urlpatterns = [
     #variable routing
     path('profile/<username>/', views.profile),
     path('cube/<int:number>', views.cube), #integer로 바꾸려면 int:을 앞에 붙이자
-    path('articles/', views.articles)
+    path('articles/', views.articles),
+    path('lotto2/', my_views.lotto2),
+    path('profile2/<username>/', my_views.profile2),
+    path('phone_books/', my_views.phone_books),
+    path('god/<myname>/',my_views.god)
 ]
