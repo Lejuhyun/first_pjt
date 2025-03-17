@@ -84,7 +84,7 @@ def lunch(request):
 4. templates안에 <index>.html이라는 파일 생성
     - templates는 HTML을 이용하여 화면을 구성해주는것
     - index.html에서 !+tab으로 구조 생성
-    - body에 <h1>으로 hello! 생성
+    - body에 h1으로 hello! 생성
 
 
 
