@@ -91,3 +91,33 @@ def 함수이름(request):
 context = {'':}
 return render(request, 함수이름.html, context)
 > templates 파일에 함수이름.html 이라는 템플릿 생성
+
+
+
+
+2025-03-18
+0. form: <form> 태그는 사용자가 입력한 데이터를 서버로 전송하는 역할
+    - 사용자 입력 수집: 사용자가 입력한 데이터를 포함하는 여러 입력 필드(<input>, <textarea>, <select> 등)를 그룹화합니다.
+    - 데이터 전송: action 속성에 지정된 URL로 데이터를 전송합니다.
+    - 전송 방식 지정: method 속성을 사용하여 GET 또는 POST 방식으로 데이터를 보낼 수 있습니다.
+1. input: 사용자로부터 정보를 입력받는 입력필드
+    - type= "text": 글자 입력
+    - type= "submit": 제출하는 버튼
+    - name 설정: web주소를 바꿔준다
+    - <input type="text" name="title">
+    - <input type="text" name="content">
+    - <input type="submit"> -> 제출버튼 생성
+    - http://127.0.0.1:8000/ping/?title=주현제목&content=주현내용
+
+2. pong으로 데이터 전송
+    - <form action="/pong/">
+    - 최종적으로 만들어진 url: http://127.0.0.1:8000/pong/?title=123&content=3456
+    - url 주소가 ping에서 pong으로 바뀐다
+    - 물음표 뒤는 url이 아닌 **데이터다**
+
+3. 데이터 가져오기(물음표 뒤의 데이터)
+    - GET 요청으로 보낸 데이터를 출력
+    - <print(request.GET)>
+    - 결과: <QueryDict: {'title': ['안녕'], 'content': ['방가']}>
+    - 데이터 하나씩 꺼내오기
+    - <print(request.GET.get('title'))> -> 안녕

@@ -35,5 +35,7 @@ urlpatterns = [
     path('lotto2/', my_views.lotto2),
     path('profile2/<username>/', my_views.profile2),
     path('phone_books/', my_views.phone_books),
-    path('god/<myname>/',my_views.god)
+    path('god/<myname>/',my_views.god),
+    path('ping/',views.ping),
+    path('pong/',views.pong)
 ]

@@ -56,3 +56,20 @@ def articles(request):
         'fake_articles': fake_articles,
     }
     return render(request, 'articles.html', context)
+
+def ping(request):
+    return render(request, 'ping.html')
+
+def pong(request):
+    # print(request.GET['title']) #안녕
+    # print(request.GET['content']) #방가
+    title = request.GET.get('title')
+    content = request.GET.get('content') 
+    #get: keyerror가 발생하지 않음
+    #key가 dict에 없으면 'None'을 출력
+
+    context = {
+        'title': title,
+        'content': content,
+    }
+    return render(request, 'pong.html', context)
